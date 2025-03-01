@@ -27,7 +27,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05 }}
               className="text-xl font-bold cursor-pointer"
             >
-              Portfolio
+              Serge Z.A
             </motion.div>
           </Link>
 

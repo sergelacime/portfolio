@@ -49,7 +49,12 @@ export class MemStorage implements IStorage {
 
   async createProject(project: InsertProject): Promise<Project> {
     const id = this.currentProjectId++;
-    const newProject = { ...project, id };
+    const newProject = { 
+      ...project, 
+      id,
+      liveUrl: project.liveUrl ?? null,
+      githubUrl: project.githubUrl ?? null
+    };
     this.projects.set(id, newProject);
     return newProject;
   }
@@ -64,7 +69,11 @@ export class MemStorage implements IStorage {
 
   async createExperience(experience: InsertExperience): Promise<Experience> {
     const id = this.currentExperienceId++;
-    const newExperience = { ...experience, id };
+    const newExperience = { 
+      ...experience, 
+      id,
+      endDate: experience.endDate ?? null 
+    };
     this.experiences.set(id, newExperience);
     return newExperience;
   }
